@@ -19,15 +19,17 @@ create:
       code: |
         (module
           (import "ethereum" "create" (func $create (param i32 i32 i32 i32) (result i32)))
-          (import "debug" "printMemHex" (func $printMemHex (param i32 i32)))
+          (import "ethereum" "storageStore" (func $storageStore (param i32 i32)))
           (memory 1 )
+          ;; code from useGas test
+          (data (i32.const 20) "\0b\00\10\07\e8\42\00\03\37\02\b4\a5\c6\84\dd\cf\ef\d1\42\00\41\01\10\01\b4\42\00\1b\01\1d\0a\00\02\79\72\6f\6d\65\6d\06\02\00\6e\69\61\6d\04\02\11\07\01\00\01\03\05\01\01\02\03\02\00\73\61\47\65\73\75\06\6d\75\65\72\65\68\74\65\08\00\00\73\61\47\65\73\75\06\6d\75\65\72\65\68\74\65\08\02\25\02\00\7e\01\60\00\00\60\00\7e\01\60\03\0c\01\00\74\73\6f\43\74\69\6e\69\08\0a\00\00\00\00\01\6d\73\61\00")
           (export "memory" (memory 0))
           (export "main" (func $main))
 
           (func $main
             ;;            value offset  data offset    length        result offset
-            (call $create (i32.const 0) (i32.const 16) (i32.const 0) (i32.const 0))
-            drop
+            (i32.store (i32.const 400) (call $create (i32.const 0) (i32.const 20) (i32.const 132) (i32.const 0)))
+            (call $storageStore (i32.const 300) (i32.const 400))
           )
         )
   expect:
@@ -40,10 +42,11 @@ create:
       result:
         deadbeef00000000000000000000000000000000:
           storage: {
+            0: "0x0"
           }
   transaction:
     data:
-    - '0x'
+    - ''
     gasLimit:
     - '0x6acfc0'
     gasPrice: '0x02'
