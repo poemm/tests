@@ -24,13 +24,17 @@ malformedImportGetAddressZeroParams:
           (export "main" (func $main))
           (export "memory" (memory 0))
           (func $main
-            (local $addrOffset i32)
-            (local $keyOffset  i32)
-            (set_local $addrOffset (i32.const 32))
+            (local $keyOffset i32)
+            (local $valOffset i32)
+            (set_local $valOffset (i32.const 32))
             (set_local $keyOffset  (i32.const 0))
+
+            (i32.store (get_local $valOffset) (i32.const 1)) ;; value
             
             (call $getAddress)
-            (call $storageStore (get_local $keyOffset) (get_local $addrOffset))))
+
+            ;; the following function call should not be executed since getAddress fail
+            (call $storageStore (get_local $keyOffset) (get_local $valOffset)))) ;; try to store value 1 in key 0
       nonce: ''
       storage: {}
   expect:
@@ -45,7 +49,7 @@ malformedImportGetAddressZeroParams:
           balance: '100000000000'
         b94f5374fce5edbc8e2a8697c15331677e6ebf0b:
           storage: {
-            0: ''
+            0: '0x0' # should not store anything here since getAddress fails prior to storageStore execution
           }
   transaction:
     data:

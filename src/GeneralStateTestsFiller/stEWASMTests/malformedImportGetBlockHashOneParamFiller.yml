@@ -24,8 +24,21 @@ malformedImportGetBlockHashOneParam:
           (export "main" (func $main))
           (export "memory" (memory 0))
           (func $main
+            (local $keyOffset i32)
+            (local $valOffset i32)
+
+            (set_local $keyOffset (i32.const 0))
+            (set_local $valOffset (i32.const 32))
+
+            (i32.store (get_local $keyOffset) (i32.const 0)) ;; set key = 0
+            (i32.store (get_local $valOffset) (i32.const 1)) ;; set value = 1
+            
+            ;; try to load block 0, there is no return offset and no result offset
             (call $getBlockHash (i64.const 0))
-            (call $storageStore (i32.const 0) (i32.const 32))))
+
+            ;; try to store the value 1 in storage position 0
+            ;; this should not work because blockhash should throw an InternalError
+            (call $storageStore (get_local $keyOffset) (get_local $valOffset))))
       nonce: ''
       storage: {}
   expect:
@@ -40,7 +53,7 @@ malformedImportGetBlockHashOneParam:
           balance: '100000000000'
         b94f5374fce5edbc8e2a8697c15331677e6ebf0b:
           storage: {
-            0: ''
+            0: '0x0' # expect nothing stored here
           }
   transaction:
     data:

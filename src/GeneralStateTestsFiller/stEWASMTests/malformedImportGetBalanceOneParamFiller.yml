@@ -26,7 +26,9 @@ malformedImportGetBalanceOneParam:
           (func $main
             (call $getAddress (i32.const 0))
             (call $getBalance  (i32.const 0))
-            (call $storageStore (i32.const 200) (i32.const 100))
+
+            ;; should not execute storageStore
+            (call $storageStore (i32.const 32) (i32.const 0))
           )
         )
       nonce: ''
