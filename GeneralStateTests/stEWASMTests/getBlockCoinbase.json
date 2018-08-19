@@ -2,8 +2,8 @@
     "getBlockCoinbase" : {
         "_info" : {
             "comment" : "",
-            "filledwith" : "testeth 1.4.0rc0",
-            "lllcversion" : "Version: 0.4.20-develop.2017.12.3+commit.4cad0b22.Linux.g++",
+            "filledwith" : "testeth 1.5.0.dev1-12+commit.40566e5e",
+            "lllcversion" : "Version: 0.4.25-develop.2018.7.10+commit.f6edb7fb.Linux.g++",
             "source" : "src/GeneralStateTestsFiller/stEWASMTests/getBlockCoinbaseFiller.yml",
             "sourceHash" : "d8b3d1024a800671032de8f1149ab5479fff270a1718ca1fd924b6ce95f05cbf"
         },

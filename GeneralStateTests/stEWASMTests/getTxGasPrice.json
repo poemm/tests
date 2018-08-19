@@ -2,8 +2,8 @@
     "getTxGasPrice" : {
         "_info" : {
             "comment" : "",
-            "filledwith" : "testeth 1.4.0rc0",
-            "lllcversion" : "Version: 0.4.20-develop.2017.12.3+commit.4cad0b22.Linux.g++",
+            "filledwith" : "testeth 1.5.0.dev1-12+commit.40566e5e",
+            "lllcversion" : "Version: 0.4.25-develop.2018.7.10+commit.f6edb7fb.Linux.g++",
             "source" : "src/GeneralStateTestsFiller/stEWASMTests/getTxGasPriceFiller.yml",
             "sourceHash" : "d67516d6b105b068ebe87ea4588ddc5000b5dce5c023ade26721fe5b3066f32c"
         },

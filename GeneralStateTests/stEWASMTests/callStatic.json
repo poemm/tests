@@ -2,8 +2,8 @@
     "callStatic" : {
         "_info" : {
             "comment" : "",
-            "filledwith" : "testeth 1.4.0rc0",
-            "lllcversion" : "Version: 0.4.20-develop.2017.12.3+commit.4cad0b22.Linux.g++",
+            "filledwith" : "testeth 1.5.0.dev1-12+commit.40566e5e",
+            "lllcversion" : "Version: 0.4.25-develop.2018.7.10+commit.f6edb7fb.Linux.g++",
             "source" : "src/GeneralStateTestsFiller/stEWASMTests/callStaticFiller.yml",
             "sourceHash" : "1bc74e09806d064b5ed08b43eba45de62b5c9489fce03c7d0c186832e2e1e492"
         },
