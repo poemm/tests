@@ -41,8 +41,6 @@ wasmDivisionByZero:
       network:
         - ALL
       result:
-        # Balance       TXCOST
-        # 100000000000  - 21000   = 99999979000
         a94f5374fce5edbc8e2a8697c15331677e6ebf0b:
           balance: '99916113919'
         b94f5374fce5edbc8e2a8697c15331677e6ebf0b:

@@ -25,7 +25,7 @@ wasmUnreachable:
          (export "memory" (memory 0))
          (export "main" (func $main))
          (func $main
-          ;; this division by zero should trap
+          ;; trap
           (unreachable)
           ;; this should not be executed
           (call $storageStore (i32.const 0) (i32.const 32))
@@ -41,8 +41,6 @@ wasmUnreachable:
       network:
         - ALL
       result:
-        # Balance       TXCOST
-        # 100000000000  - 21000   = 99999979000 ??
         a94f5374fce5edbc8e2a8697c15331677e6ebf0b:
           balance: '99916113919'
         b94f5374fce5edbc8e2a8697c15331677e6ebf0b:

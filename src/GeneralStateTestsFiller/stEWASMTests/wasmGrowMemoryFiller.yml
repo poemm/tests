@@ -25,9 +25,8 @@ wasmGrowMemory:
          (func $main
           (local $keyAddress i32)
           (local $valAddress i32)
-          (set_local $valAddress
-           (i32.const 32)
-          )
+          (set_local $keyAddress (i32.const 0))
+          (set_local $valAddress (i32.const 32))
           ;; grow the memory by 2 pages, drop the return
           (drop
            (grow_memory
@@ -39,7 +38,7 @@ wasmGrowMemory:
            (get_local $valAddress)
            (current_memory)
           )
-          ;; store memory size at address 0
+          ;; store memory size 3 at address 0
           (call $storageStore
            (get_local $keyAddress)
            (get_local $valAddress)

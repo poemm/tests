@@ -5,7 +5,7 @@
             "filledwith" : "testeth 1.5.0.dev2+commit.b275f2db.dirty",
             "lllcversion" : "Version: 0.4.25-develop.2018.8.21+commit.410d288d.Linux.g++",
             "source" : "src/GeneralStateTestsFiller/stEWASMTests/wasmGrowMemoryFiller.yml",
-            "sourceHash" : "6826acc65ab6c88f3663d009dd7bdd8ae706fa83eb65ad5c0e00133158abd5b9"
+            "sourceHash" : "08c17c77d42eae863d30576b5b96ddd6076feefb77b27b408865678884b58c1d"
         },
         "env" : {
             "currentCoinbase" : "0x2adc25665018aa1fe0e6bc666dac8fc2697ff9ba",
@@ -18,7 +18,7 @@
         "post" : {
             "Byzantium" : [
                 {
-                    "hash" : "0xc68090ac547c9ac84452c2be10671ad362b222f761cc6f1064c58ca3cf5132d3",
+                    "hash" : "0xc04270c3b1ef4885c811807b00e46cab2f2b23814d1405e64e76f761e5c0b905",
                     "indexes" : {
                         "data" : 0,
                         "gas" : 0,
@@ -38,7 +38,7 @@
             },
             "0xb94f5374fce5edbc8e2a8697c15331677e6ebf0b" : {
                 "balance" : "0x174876e800",
-                "code" : "0x0061736d0100000001090260027f7f0060000002190108657468657265756d0c73746f7261676553746f72650000030201010503010001071102066d656d6f72790200046d61696e00010a1c011a01027f41202101410240001a20013f003a00002000200110000b",
+                "code" : "0x0061736d0100000001090260027f7f0060000002190108657468657265756d0c73746f7261676553746f72650000030201010503010001071102066d656d6f72790200046d61696e00010a20011e01027f4100210041202101410240001a20013f003a00002000200110000b",
                 "nonce" : "0x00",
                 "storage" : {
                 }
